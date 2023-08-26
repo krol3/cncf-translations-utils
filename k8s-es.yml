@@ -1,0 +1,45 @@
+owner: kubernetes
+repository: website
+defaultPath: "content/en/"
+fileTarget: "docs/concepts/security/security-checklist/"
+initTitle: "[es] Translate - "
+endTitle: " into Spanish"
+website: "https://kubernetes.io/"
+
+labels: 
+  - kind/feature
+  - language/es
+
+body: >
+  **This is a Feature Request**
+
+  Translate this page [FILE_TARGET](HYPERLINK) into Spanish.
+
+
+  **What would you like to be added**
+
+  The translation will be added to `content/es/`FILE_TARGET
+
+
+  **Why is this needed**
+
+  There is no Spanish localization for this file.
+  It would be great if we could read this in Spanish.
+
+
+  **Comments**
+
+  The Spanish translation team would like to facilitate your contribution's journey, 
+  any doubt participate in the weekly meetings in the kubernetes slack channel `kubernetes-docs-es`
+
+
+  We also encourage new contributors to participate in their native speaking language 💥.
+
+
+  /triage accepted
+
+  /kind feature
+
+  /language es
+
+  /sig docs
