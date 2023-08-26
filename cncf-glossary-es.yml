@@ -1,14 +1,14 @@
-owner: kubernetes
-repository: website
+owner: cncf
+repository: glossary
 defaultPath: "content/en/"
-fileTarget: "docs/concepts/security/security-checklist/"
+fileTarget: "devsecops"
 initTitle: "[es] Translate - "
 endTitle: " into Spanish"
-website: "https://kubernetes.io/"
+website: "https://glossary.cncf.io/"
 
 labels: 
-  - kind/feature
-  - language/es
+  - lang/es
+  - "good first issue"
 
 body: >
   **This is a Feature Request**
@@ -34,12 +34,3 @@ body: >
 
 
   We also encourage new contributors to participate in their native speaking language 💥.
-
-
-  /triage accepted
-
-  /kind feature
-
-  /language es
-
-  /sig docs

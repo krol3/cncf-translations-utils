@@ -13,7 +13,7 @@ go mod tidy
 go run main.go
 ````
 
-Validate [this issue sample here](https://github.com/kubernetes/website/issues/42736)
+Validate [this k8s issue sample here](https://github.com/kubernetes/website/issues/42736) and this [glossary issue](https://github.com/cncf/glossary/issues/2333)
 
 ```
 go run ./main.go
