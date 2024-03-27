@@ -7,10 +7,8 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
-	"syscall"
 
 	"github.com/google/go-github/github"
-	"golang.org/x/crypto/ssh/terminal"
 	"golang.org/x/oauth2"
 	"gopkg.in/yaml.v3"
 )
@@ -47,7 +45,7 @@ func createIssue(client *github.Client, param *Parameters) (*github.Issue, error
 func main() {
 
 	var yamlFile string
-	fmt.Print("Enter yaml file: ")
+	fmt.Print("Enter yaml file (See sample k8s-es.yml): ")
 	fmt.Scanf("%s", &yamlFile)
 
 	// Read and Unmarshal yaml file
@@ -66,21 +64,37 @@ func main() {
 	}
 
 	fmt.Print("GitHub Token: ")
-	byteToken, _ := terminal.ReadPassword(int(syscall.Stdin))
-	println()
-	token := string(byteToken)
+	// Read the environment variable
+	envVarName := "GITHUB_TOKEN"
+	ghToken := os.Getenv("GITHUB_TOKEN")
+	// Check if the environment variable exists
+	if ghToken == "" {
+		fmt.Printf("Environment variable %s is not set.\n", envVarName)
+	} else {
+		fmt.Printf("Value of environment variable %s is: %s\n", envVarName, ghToken)
+	}
+	// byteToken, _ := terminal.ReadPassword(int(syscall.Stdin))
+	// println()
+	// token := string(byteToken)
 
 	ctx := context.Background()
 	ts := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: token},
+		&oauth2.Token{AccessToken: ghToken},
 	)
 	tc := oauth2.NewClient(ctx, ts)
 	client := github.NewClient(tc)
 
 	fmt.Printf("--- Create issue in %s/%s \n", params.Owner, params.Repository)
-	createIssue(client, &params)
+	issue, err := createIssue(client, &params)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	// print the fields to the console
+	fmt.Printf("issue Number: %d\n", *issue.Number)
+	fmt.Printf("issue Title: %s\n", *issue.Title)
+	fmt.Printf("issue Body: %s\n", *issue.Body)
+
 	fmt.Printf("fileTarget: %s\n", params.FileTarget)
 	fmt.Printf("Issue Title: %s\n", params.Title)
 	fmt.Printf("Issue Labels: %s\n", params.Labels)

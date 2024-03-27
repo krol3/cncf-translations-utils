@@ -6,6 +6,13 @@ CNCF translations utils for the Spanish group team
 You can test out a GitHub Personal Access Token using this simple example.
 // You can generate them here: https://github.com/settings/tokens
 
+How generate a token in github [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+
+## TODO
+
+- By default read the file k8s-es.yml
+- Generate a binary
+
 ### Run
 
 ````

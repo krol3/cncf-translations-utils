@@ -1,7 +1,7 @@
 owner: kubernetes
 repository: website
 defaultPath: "content/en/"
-fileTarget: "docs/concepts/security/security-checklist/"
+fileTarget: "docs/concepts/architecture/nodes"
 initTitle: "[es] Translate - "
 endTitle: " into Spanish"
 website: "https://kubernetes.io/"
