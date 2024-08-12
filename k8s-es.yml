@@ -1,9 +1,10 @@
 owner: kubernetes
 repository: website
 defaultPath: "content/en/"
-fileTarget: "docs/concepts/architecture/nodes"
+fileTarget: "docs/tasks/debug/debug-cluster/audit"
 initTitle: "[es] Translate - "
-endTitle: " into Spanish"
+# Add in the endTitle if is new or update the content
+endTitle: " into Spanish - Update"
 website: "https://kubernetes.io/"
 
 labels: 

@@ -11,7 +11,8 @@ How generate a token in github [here](https://docs.github.com/en/authentication/
 ## TODO
 
 - By default read the file k8s-es.yml
-- Generate a binary
+- Generate a binary 
+- Add the binary to the github actions
 
 ### Run
 
@@ -23,6 +24,8 @@ go run main.go
 Validate [this k8s issue sample here](https://github.com/kubernetes/website/issues/42736) and this [glossary issue](https://github.com/cncf/glossary/issues/2333)
 
 ```
+export GITHUB_TOKEN=xxxx
+
 go run ./main.go
 Enter yaml file: k8s-es.yml
 GitHub Token: 
